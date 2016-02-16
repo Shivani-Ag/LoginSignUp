@@ -14,6 +14,11 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
         	templateUrl: 'templates/login.html',
         	controller: 'loginController'
     	});
+     $routeProvider.when('/reset', 
+	{
+        	templateUrl: 'templates/reset.html',
+        	controller: 'resetController'
+    	});
     $routeProvider.when('/login', 
 	{
         	templateUrl: 'templates/login.html',
@@ -29,31 +34,26 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
         	templateUrl: 'templates/home.html',
         	controller: 'homeController'
         });
+    $routeProvider.when('/forgot', 
+	{
+        	templateUrl: 'templates/forgot.html',
+        	controller: 'forgotController'
+        });
      $routeProvider.otherwise({
-        redirectTo: '/home'
+        redirectTo: '/login'
       });
     
 }]);
 
-myFirstApp.controller('ProfileCtrl', function($scope,$http) {
-  
-  
-  $http.get('json/myProfile.json',{}).success(function(data){$scope.items = data;});
-  
-}); 
 
-myFirstApp.controller('loginCtrl', function($scope,$http) {
-  
-  
-  $http.get('json/login.json',{}).success(function(datas){
-			$scope.itemss = datas;
-		});
-  
-}); 
 
 myFirstApp.controller('profileController', function($scope) {
      
     $scope.message = 'Profile';
+    $scope.name =  'James';
+    $scope.email =  'james@gmail.com';
+    $scope.age = '24';
+    $scope.password = 'abc123';
      
 });
  
@@ -67,8 +67,20 @@ myFirstApp.controller('registerController', function($scope) {
     $scope.message = 'register';
  
 });
+myFirstApp.controller('forgotController', function($scope) {
+ 
+    $scope.message = 'forgot';
+ 
+});
 myFirstApp.controller('homeController', function($scope) {
  
     $scope.message = 'home';
  
 });
+myFirstApp.controller('resetController', function($scope) {
+ 
+    $scope.message = 'home';
+ 
+});
+
+

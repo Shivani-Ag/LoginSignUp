@@ -1,17 +1,20 @@
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div ng-controller="profileController">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/normalize.css">
         <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
 <br><br></br></br>
 <form action="index.html" method="post">
       
+ 
+    
         <h1>Your Detail</h1>
         
         <fieldset>
-          <label for="name">Name:</label><br>
-          <label for="mail">Email:</label> <br>
-          <label for="age">Age:</label><br>
-          <label for="password">Password:</label><br>
+          <label for="name">Name:</label>  {{ name }}<br>
+          <label for="mail">Email:</label> {{ email }}<br>
+          <label for="age">Age:</label> {{ age }}<br>
+          <label for="password">Password:</label> {{ password }}<br>
         </fieldset>
         <center> <a class="button button-calm" href="#ok">OK </a></center>
 </form>

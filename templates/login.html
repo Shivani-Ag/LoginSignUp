@@ -6,8 +6,8 @@
       <label for="name">E-mail:</label><input type="text" name="user" placeholder="Email-Id" ng-model="useremail">
     
       <label for="password">Password:</label><input type="password" name="pass" placeholder="Password" ng-model="userpassword">
-   
-     <center> <a class="button button-calm" href="#log">Login </a></center>
+        {{useremail}}
+     <center> <a class="button button-calm" href="#log" ng-click="submitFunction()">Login </a></center>
 </form>
     
 <div class="login-help">

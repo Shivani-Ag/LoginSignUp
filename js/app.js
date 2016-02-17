@@ -48,10 +48,13 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
 
 
 myFirstApp.controller('loginController', function($scope,$rootScope) {
- 
     $scope.message = 'login';
-    $rootScope.useremail = 'hey';
-    $rootScope.userpassword = '11';
+   
+    $scope.submitFunction = function(){
+    $rootScope.useremail = $scope.useremail;
+    $rootScope.userpassword = $scope.userpassword;
+    }
+    
  
 });
 myFirstApp.controller('profileController', function($scope,$rootScope) {
@@ -59,6 +62,7 @@ myFirstApp.controller('profileController', function($scope,$rootScope) {
     $scope.message = 'Profile';
     $scope.name =  "james";
     $scope.email =  $rootScope.useremail;
+    console.log($scope.email);
     $scope.age = '24';
     $scope.password =  $rootScope.userpassword;
      

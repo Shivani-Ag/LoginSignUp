@@ -1,4 +1,5 @@
-
+(function(angular) {
+  'use strict';
 var myFirstApp = angular.module('myFirstApp', []);
 
 myFirstApp.config(['$routeProvider',function($routeProvider) 
@@ -65,7 +66,6 @@ myFirstApp.controller('loginController', function($scope) {
 myFirstApp.controller('registerController', function($scope) {
  
     $scope.message = 'register';
- 
 });
 myFirstApp.controller('forgotController', function($scope) {
  
@@ -83,4 +83,7 @@ myFirstApp.controller('resetController', function($scope) {
  
 });
 
-
+myFirstApp.controller('myCtrl', ['$scope', function($scope) {
+    
+  }]);
+})(window.angular);

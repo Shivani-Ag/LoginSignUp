@@ -1,26 +1,39 @@
 
  
  
-  <div class="margin-10">
+ <div class="margin-8" ng-controller="myCtrl">
+  <form name="form">
+      <h1>Sign-Up</h1>
+      <label for="age">Name:</label>
+    <input type="text" ng-model="name" placeholder="User Name" name="uName" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uName.$touched">
+        <div ng-show="form.uName.$error.required"> Tell us your name.</div>
+    </div>
 
+      <label for="age">E-mail:</label>
+    <input type="email" ng-model="email" placeholder="Email-Id" name="uEmail" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uEmail.$touched">
+      <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+      <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+    </div>
 
-      <form action="index.html" method="post">
-      
-        <h1>Sign Up</h1>
-        
-        <fieldset>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="user_name" placeholder="Full Name">
-          
-          <label for="mail">Email:</label>
-          <input type="email" id="mail" name="user_email" placeholder="Username">
-          
-          <label for="age">Age:</label>
-          <input type="text" id="age" name="user_age" placeholder="Age">
+     <label for="age">Age:</label>
+          <input type="text" ng-model="age" placeholder="Your Age" name="uAge" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uAge.$touched">
+        <div ng-show="form.uAge.$error.required"> Tell us your age.</div>
+    </div>
             
           <label for="password">Password:</label>
-          <input type="password" id="password" name="user_password" placeholder="Password">
-        </fieldset>
-        <center> <a class="button button-calm" href="#signup">Sign Up </a></center>
+         <input type="password" ng-model="password" placeholder="Your Password" name="uPassword" required="" />
+    <br />
+    <div ng-show="form.$submitted || form.uPassword.$touched">
+        <div ng-show="form.uPassword.$error.required"> Tell us your Password.</div>
+    </div>
+          
+          
+       <center> <a class="button button-calm" href="#signup">Sign Up </a></center>
 </form>
 </div>

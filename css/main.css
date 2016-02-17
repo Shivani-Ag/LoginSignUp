@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: #F7F7F7;
+  color: blue;
 }
 
 form {
@@ -42,8 +42,8 @@ select {
   outline: 0;
   padding: 15px;
   width: 100%;
-  background-color: #fff;
-  color: #666;
+  background-color: white;
+  color: black;
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
   margin-bottom: 10px;
 }

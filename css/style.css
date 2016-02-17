@@ -10,8 +10,8 @@ body {
 }
 
 .login-card {
-  padding: 60px;
-  width: 300px;
+  padding: 40px;
+  width: 350px;
   background-color: #F7F7F7;
   margin: 0 auto 10px;
   border-radius: 2px;
@@ -108,4 +108,7 @@ body {
 }
 .margin-10{
     margin-top: 10%;
+}
+.margin-8{
+    margin-top: 8%;
 }

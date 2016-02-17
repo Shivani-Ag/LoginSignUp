@@ -47,22 +47,24 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
 }]);
 
 
-
-myFirstApp.controller('profileController', function($scope) {
-     
-    $scope.message = 'Profile';
-    $scope.name =  'James';
-    $scope.email =  'james@gmail.com';
-    $scope.age = '24';
-    $scope.password = 'abc123';
-     
-});
- 
-myFirstApp.controller('loginController', function($scope) {
+myFirstApp.controller('loginController', function($scope,$rootScope) {
  
     $scope.message = 'login';
+    $rootScope.useremail = 'hey';
+    $rootScope.userpassword = '11';
  
 });
+myFirstApp.controller('profileController', function($scope,$rootScope) {
+     
+    $scope.message = 'Profile';
+    $scope.name =  "james";
+    $scope.email =  $rootScope.useremail;
+    $scope.age = '24';
+    $scope.password =  $rootScope.userpassword;
+     
+});
+ 
+
 myFirstApp.controller('registerController', function($scope) {
  
     $scope.message = 'register';
@@ -83,7 +85,4 @@ myFirstApp.controller('resetController', function($scope) {
  
 });
 
-myFirstApp.controller('myCtrl', ['$scope', function($scope) {
-    
-  }]);
 })(window.angular);

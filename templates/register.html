@@ -1,18 +1,15 @@
-
- 
- 
- <div class="margin-8">
+<div class="margin-8">
   <form name="form">
       <h1>Sign-Up</h1>
       <label for="age">Name:</label>
-    <input type="text" ng-model="name" placeholder="User Name" name="uName" required="" />
+    <input type="text" ng-model="usname" placeholder="User Name" name="uName" required="" />
     <br />
     <div ng-show="form.$submitted || form.uName.$touched">
         <div ng-show="form.uName.$error.required"> Tell us your name.</div>
     </div>
 
       <label for="age">E-mail:</label>
-    <input type="email" ng-model="email" placeholder="Email-Id" name="uEmail" required="" />
+    <input type="email" ng-model="usemail" placeholder="Email-Id" name="uEmail" required="" />
     <br />
     <div ng-show="form.$submitted || form.uEmail.$touched">
       <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
@@ -20,20 +17,20 @@
     </div>
 
      <label for="age">Age:</label>
-          <input type="text" ng-model="age" placeholder="Your Age" name="uAge" required="" />
+          <input type="text" ng-model="usage" placeholder="Your Age" name="uAge" required="" />
     <br />
     <div ng-show="form.$submitted || form.uAge.$touched">
         <div ng-show="form.uAge.$error.required"> Tell us your age.</div>
     </div>
             
           <label for="password">Password:</label>
-         <input type="password" ng-model="password" placeholder="Your Password" name="uPassword" required="" />
+         <input type="password" ng-model="uspassword" placeholder="Your Password" name="uPassword" required="" />
     <br />
     <div ng-show="form.$submitted || form.uPassword.$touched">
         <div ng-show="form.uPassword.$error.required"> Tell us your Password.</div>
     </div>
           
           
-       <center> <a class="button button-calm" href="#signup">Sign Up </a></center>
+       <center> <a class="button button-calm" href="#signup" ng-click="submitFunction1()">Sign Up </a></center>
 </form>
 </div>

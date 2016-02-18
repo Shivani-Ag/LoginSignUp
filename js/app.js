@@ -1,7 +1,6 @@
 (function(angular) {
   'use strict';
 var myFirstApp = angular.module('myFirstApp', []);
-
 myFirstApp.config(['$routeProvider',function($routeProvider) 
 {
     
@@ -9,50 +8,52 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
 	{
         	templateUrl: 'templates/profile.html',
         	controller: 'profileController'
-    	});
+    });
      $routeProvider.when('/signup', 
 	{
-        	templateUrl: 'templates/login.html',
-        	controller: 'loginController'
-    	});
+        	templateUrl: 'templates/profile.html',
+        	controller: 'profileController'
+    });
      $routeProvider.when('/reset', 
 	{
         	templateUrl: 'templates/reset.html',
         	controller: 'resetController'
-    	});
+    });
     $routeProvider.when('/login', 
 	{
         	templateUrl: 'templates/login.html',
         	controller: 'loginController'
-        });
+    });
      $routeProvider.when('/register', 
 	{
         	templateUrl: 'templates/register.html',
         	controller: 'registerController'
-        });
+    });
 	$routeProvider.when('/home', 
 	{
         	templateUrl: 'templates/home.html',
         	controller: 'homeController'
-        });
+    });
     $routeProvider.when('/forgot', 
 	{
         	templateUrl: 'templates/forgot.html',
         	controller: 'forgotController'
-        });
+    });
      $routeProvider.otherwise({
         redirectTo: '/login'
-      });
+    });
     
 }]);
 
 
 myFirstApp.controller('loginController', function($scope,$rootScope) {
+    
     $scope.message = 'login';
    
-    $scope.submitFunction = function(){
-    $rootScope.useremail = $scope.useremail;
-    $rootScope.userpassword = $scope.userpassword;
+    $scope.submitFunction = function()
+    {
+        $rootScope.useremail = $scope.useremail;
+        $rootScope.userpassword = $scope.userpassword;
     }
     
  
@@ -60,18 +61,24 @@ myFirstApp.controller('loginController', function($scope,$rootScope) {
 myFirstApp.controller('profileController', function($scope,$rootScope) {
      
     $scope.message = 'Profile';
-    $scope.name =  "james";
-    $scope.email =  $rootScope.useremail;
+    $scope.name =  $rootScope.usname;
+    $scope.email =  $rootScope.usemail;
     console.log($scope.email);
-    $scope.age = '24';
-    $scope.password =  $rootScope.userpassword;
+    $scope.age = $rootScope.usage;
+    $scope.password =  $rootScope.uspassword;
      
 });
- 
-
-myFirstApp.controller('registerController', function($scope) {
+myFirstApp.controller('registerController', function($scope,$rootScope) {
  
     $scope.message = 'register';
+   $scope.submitFunction1 = function()
+   {
+        $rootScope.usname =  $scope.usname;
+        $rootScope.usemail =  $scope.usemail;
+        $rootScope.usage = $scope.usage;
+        $rootScope.uspassword =  $scope.uspassword;
+   }
+    
 });
 myFirstApp.controller('forgotController', function($scope) {
  

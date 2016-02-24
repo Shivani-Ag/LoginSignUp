@@ -21,13 +21,13 @@ if(isset($_POST['submit']))
     
         
         $query = mysql_query("insert into customer(customer_name, customer_email, customer_password, customer_age) values ('$customer_name', '$customer_email', '$customer_password', '$customer_age')");
-        echo "Data inserted successfully";
+        echo "<script>alert('Data Inserted successfully');</script>";
         //header( "location:http://localhost/LoginSignUp/index.html#/log");
         
     }
     else
     {
-        echo "email Id already exist";
+            echo "<script>alert('Email-id already exist');</script>";    
     }
 }
 mysql_close($connection); 

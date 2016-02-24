@@ -22,18 +22,18 @@ if(isset($_POST['submit']))
             { 
         
                 $query = mysql_query("UPDATE customer SET customer_password = '$customer_password' WHERE customer_email = '$customer_email' ");
-                echo "password updated";
+                echo "<script>alert('Password Updated');</script>";
         
             }
             else
             {
-                echo "Password do not match";
+                echo "<script>alert('Password do not match');</script>";
             }
 
     }
     else 
     {
-        echo "email-id not found" ;  
+        echo "<script>alert('Email-id not found');</script>";
     }
 }
 mysql_close($connection); 

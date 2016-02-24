@@ -15,12 +15,14 @@ if(isset($_POST['submit']))
 
     if($count>=1)
     {
-            //header( "location:http://localhost/LoginSignUp/index.html#/home"); 
-            $msg= "Successful login";
+            
+            echo "<script>alert('Login Successful');</script>";
+         header( "location:http://localhost/LoginSignUp/index.html#/home"); 
     }
     else 
     {
-            echo "Wrong Username or Password";
+           echo "<script>alert('Wrong username and password');</script>";
+        
     }
 }
 mysql_close($connection); 

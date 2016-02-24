@@ -1,7 +1,7 @@
-(function(angular) {
-  'use strict';
-var myFirstApp = angular.module('myFirstApp', []);
-myFirstApp.config(['$routeProvider',function($routeProvider) 
+(function (angular) {
+    'use strict';
+    var myFirstApp = angular.module('myFirstApp', []);
+    myFirstApp.config(['$routeProvider', function ($routeProvider) 
 {
     
     $routeProvider.when('/log', 
@@ -31,8 +31,8 @@ myFirstApp.config(['$routeProvider',function($routeProvider)
     });
 	$routeProvider.when('/home', 
 	{
-        	templateUrl: 'templates/home.html',
-        	controller: 'homeController'
+        	templateUrl: 'templates/login.html',
+        	controller: 'loginController'
     });
     $routeProvider.when('/forgot', 
 	{

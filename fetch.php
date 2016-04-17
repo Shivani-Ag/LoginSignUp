@@ -1,30 +1,29 @@
-
 <?php
-
-$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
-$db = mysql_select_db("canteen", $connection); // Selecting Database from Server
+session_start();
+$connection = mysqli_connect("localhost", "root", ""); // Establishing Connection with Server
+$db = mysqli_select_db($connection , "canteen" ); // Selecting Database from Server
 if(isset($_POST['submit']))
 { 
     $useremail = $_POST['customer_email'];
     $userpassword = $_POST['customer_password'];
-
     $sql="SELECT * FROM customer WHERE customer_email='$useremail' and customer_password='$userpassword'";
-    $result=mysql_query($sql);
-
-    $count=mysql_num_rows($result);
-
-    if($count>=1)
+    $result=mysqli_query($connection , $sql);
+    
+    $row  = mysqli_fetch_array($result);
+    if(is_array($row))
     {
-            
-            echo "<script>alert('Login Successful');</script>";
-         header( "location:http://localhost/LoginSignUp/index.html#/home"); 
+                $_SESSION['customer_email'] = $row[customer_email];
+                $_SESSION['customer_password'] = $row[customer_password];
     }
     else 
     {
-           echo "<script>alert('Wrong username and password');</script>";
-        
+                $message = "Invalid Username or Password!";
     }
 }
-mysql_close($connection); 
+if(isset($_SESSION['customer_email'])) 
+{
+        header("Location:welcome.php");
+}
+mysqli_close($connection); 
 ?>
-
+   

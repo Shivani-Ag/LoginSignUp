@@ -1,15 +1,15 @@
- <div class="list list-inset margin-10">
+<div class="list list-inset margin-10">
      <br /><br/>
      <table>
 <tr ng-repeat="project in projects">
 
-<td>Name : -{{project.customer_name}}</td>
+<td>{{project.customer_name}}</td>
 
-<td>Email  :- {{project.customer_email}}</td>
+<td>{{project.customer_email}}</td>
 
-<td>Parssword :- {{project.customer_password}}</td>
+<td>{{project.customer_password}}</td>
 
-<td>Age :- {{project.customer_age}}</td>
+<td>{{project.customer_age}}</td>
 
 </tr>
  </table>

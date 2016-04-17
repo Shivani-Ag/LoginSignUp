@@ -1,12 +1,10 @@
-(function (angular) {
-    'use strict';
-    var myFirstApp = angular.module('myFirstApp', []);
-    myFirstApp.config(['$routeProvider', function ($routeProvider) 
+var myFirstApp = angular.module('myFirstApp', []);
+myFirstApp.config(['$routeProvider', function ($routeProvider) 
 {
     
     $routeProvider.when('/log', 
 	{
-        	templateUrl: 'templates/profile.html',
+        	templateUrl: 'templates/profile.php',
         	controller: 'profileController'
     });
      $routeProvider.when('/signup', 
@@ -41,33 +39,26 @@
     });
      $routeProvider.otherwise({
         redirectTo: '/login'
-    });
-    
+    });   
 }]);
-
-
 myFirstApp.controller('loginController', function($scope,$rootScope) {
     
     $scope.message = 'login';
    
-    $scope.submitFunction = function()
-    {
-        $rootScope.useremail = $scope.useremail;
-        $rootScope.userpassword = $scope.userpassword;
-    }
+   // $scope.submitFunction = function()
+  //  {
+   //     $rootScope.useremail = $scope.useremail;
+        //$rootScope.userpassword = $scope.userpassword;
+   //    
+   // }
+});
+
+myFirstApp.controller('profileController', function($scope,$http) {
+
+});
     
- 
-});
-myFirstApp.controller('profileController', function($scope,$rootScope) {
-     
-    $scope.message = 'Profile';
-    $scope.name =  $rootScope.usname;
-    $scope.email =  $rootScope.usemail;
-    console.log($scope.email);
-    $scope.age = $rootScope.usage;
-    $scope.password =  $rootScope.uspassword;
-     
-});
+
+
 myFirstApp.controller('registerController', function($scope,$rootScope) {
  
     $scope.message = 'register';
@@ -77,8 +68,7 @@ myFirstApp.controller('registerController', function($scope,$rootScope) {
         $rootScope.usemail =  $scope.usemail;
         $rootScope.usage = $scope.usage;
         $rootScope.uspassword =  $scope.uspassword;
-   }
-    
+   }    
 });
 myFirstApp.controller('forgotController', function($scope) {
  
@@ -95,5 +85,3 @@ myFirstApp.controller('resetController', function($scope) {
     $scope.message = 'home';
  
 });
-
-})(window.angular);
